@@ -14,5 +14,5 @@ if ($_POST["post-submit"]) {
         echo "Error: " . $sql . "<br>" . mysqli_error($db_handle);
     }
 
-    mysqli_close($conn);
+    mysqli_close($db_handle);
 }

@@ -31,4 +31,4 @@ EOD;
     ?>
 
 </div>
-<?php include "tail" ?>
+<?php include "tail.php" ?>

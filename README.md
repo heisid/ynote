@@ -4,6 +4,7 @@ This is not really a blog. This is for making notes, single user, with no login 
 ## TODO
 - Multiuser with password, not necessarily using login, just requiring password each new post or edit.
 - Edit and delete (with modification timestamp), of course.
-- Commenting capability
+- Commenting capability (after implementing multiuser)
 - Topic tags
 - Possibly editing history (with diff style like Quora)
+- Search capability

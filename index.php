@@ -4,7 +4,7 @@
     include "navbar.php";
     include_once "config.php";
 
-    $sql = "SELECT title_post, date_post, content
+    $sql = "SELECT *
             FROM post
             ORDER BY date_post DESC
             LIMIT 5";
@@ -18,12 +18,16 @@
         while($row = mysqli_fetch_array($result_sql)) {
             $content_no_html = strip_tags($row['content']);
             $content_crop = substr($content_no_html, 0, 500);
+            if (mb_strlen($content_no_html, 'utf8') > 500) {
+                $content_crop .= '...';
+            }
             echo <<<EOD
     <div class="row">
         <div class="col-md-12">
             <h3>{$row['title_post']}</h3>
             <p><em>{$row['date_post']}</em><p>
             <p>{$content_crop}</p>
+            <a href="readpost.php?id-post={$row['id_post']}" class="btn btn-primary">Read More</a>
         </div>
     </div>
 EOD;

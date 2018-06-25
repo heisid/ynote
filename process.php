@@ -9,9 +9,11 @@ if ($_POST["post-submit"]) {
     VALUE (NULL, NOW(), '$post_title', '$post_content')";
 
     if (mysqli_query($db_handle, $sql)) {
-        echo "Post success";
+        header("Location: index.php");
+        die();
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($db_handle);
+        echo "<a href='newpost.php' class='btn btn-primary'>Back</a>";
     }
 
     mysqli_close($db_handle);

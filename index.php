@@ -22,7 +22,7 @@
                 $content_crop .= '...';
             }
             echo <<<EOD
-    <div class="row">
+    <div class="row post-showcase">
         <div class="col-md-12">
             <h3>{$row['title_post']}</h3>
             <p><em>{$row['date_post']}</em><p>

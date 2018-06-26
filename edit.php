@@ -32,7 +32,6 @@
         <script>
             $(document).ready(function() {
                 CKEDITOR.replace("post-content");
-                //CKEDITOR.instances["post-content"].setData(jancuk);                
             })
         </script>
     </div>

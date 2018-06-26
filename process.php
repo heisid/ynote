@@ -18,3 +18,10 @@ if ($_POST["post-submit"]) {
 
     mysqli_close($db_handle);
 }
+
+if ($_POST["post-edit-submit"]) {
+    $id_post = (int) $_POST["id-post"];
+    $post_title = mysqli_real_escape_string($db_handle, $_POST["post-title"]);
+    $post_content = mysqli_real_escape_string($db_handle, $_POST["post-content"]);
+
+}

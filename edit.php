@@ -22,6 +22,7 @@
 
 <h1>Edit</h1>
 <form action="process.php" method="post">
+    <input type="hidden" name="id-post" value="<?php echo $id_post; ?>">
     <div class="form-group">
         <label for="post-title">Title</label>
         <input name="post-title" class="form-control form-control-lg" id="post-title" type="text" value="<?php echo $title_post; ?>">

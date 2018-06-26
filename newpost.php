@@ -25,6 +25,10 @@
         <label for="post-content">Content</label>
         <textarea name="post-content" id="post-content"></textarea>
     </div>
+    <div class="form-group">
+        <label for="tags">Tags (separate with comma)</label>
+        <input name="tags" class="form-control form-control-sm" id="tags" type="text">
+    </div>
     <div class="form-group button-group">
         <button type="submit" name="post-submit" value="1" class="btn btn-primary">Submit</button>
     </div>

@@ -18,17 +18,7 @@
     include "navbar.php";
 ?>
 
-<script src="assets/js/tinymce/tinymce.min.js"></script>
-<script src="assets/js/tinymce/jquery.tinymce.min.js"></script>
-<script type="text/javascript">
-  tinymce.init({
-    selector: '#post-content',
-    menubar: 'edit view format',
-    height: '300px',
-    branding: false
-  });
-  tinymce.get("post-content").setContent("just a freaking test");
-</script>
+<script src="assets/js/ckeditor/ckeditor.js"></script>
 
 <h1>Edit</h1>
 <form action="process.php" method="post">
@@ -38,7 +28,13 @@
     </div>
     <div class="form-group">
         <label for="post-content">Content</label>
-        <textarea name="post-content" id="post-content"></textarea>
+        <textarea name="post-content" id="post-content"><?php echo $content; ?></textarea>
+        <script>
+            $(document).ready(function() {
+                CKEDITOR.replace("post-content");
+                //CKEDITOR.instances["post-content"].setData(jancuk);                
+            })
+        </script>
     </div>
     <div class="form-group">
         <label for="tags">Tags (separate with comma)</label>

@@ -4,16 +4,7 @@
     include "header.php";
     include "navbar.php";
 ?>
-<script src="assets/js/tinymce/tinymce.min.js"></script>
-<script src="assets/js/tinymce/jquery.tinymce.min.js"></script>
-<script type="text/javascript">
-  tinymce.init({
-    selector: '#post-content',
-    menubar: 'edit view format',
-    height: '300px',
-    branding: false
-  });
-</script>
+<script src="assets/js/ckeditor/ckeditor.js"></script>
 
 <h1>New Post</h1>
 <form action="process.php" method="post">
@@ -23,7 +14,10 @@
     </div>
     <div class="form-group">
         <label for="post-content">Content</label>
-        <textarea name="post-content" id="post-content"></textarea>
+        <textarea name="post-content" id="post-content" row="10" col="80"></textarea>
+        <script>
+            CKEDITOR.replace("post-content");
+        </script>
     </div>
     <div class="form-group">
         <label for="tags">Tags (separate with comma)</label>

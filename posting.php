@@ -40,7 +40,7 @@
         <label for="post-title">Title</label>
         <input name="post-title" class="form-control form-control-lg" id="post-title" type="text" 
             <?php
-                if(isset($title_post)) echo "value=$title_post";
+                if(isset($title_post)) echo "value='$title_post'";
             ?>
         >
     </div>

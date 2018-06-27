@@ -17,6 +17,7 @@
     } else {
         $page_title = "New Post";
     }
+    $style = "posting.css";
     include "header.php";
     include "navbar.php";
 ?>

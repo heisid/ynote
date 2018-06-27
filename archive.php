@@ -4,7 +4,7 @@
     include "navbar.php";
     include_once "config.php";
 
-    $sql = "SELECT id_post, date_post, title_post FROM post ORDER BY date_post DESC";
+    $sql = "SELECT id_post, date_post, title_post FROM posts ORDER BY date_post DESC";
     $result_sql = mysqli_query($db_handle, $sql);
 
     echo "<h1>Post Archive</h1>";

@@ -1,12 +1,19 @@
 <?php
 include_once "config.php";
 
-if ($_POST["post-submit"]) {
+if (isset($_POST["post-submit"])) {
     $post_title = mysqli_real_escape_string($db_handle, $_POST["post-title"]);
     $post_content = mysqli_real_escape_string($db_handle, $_POST["post-content"]);
+    
+    if ($_POST["id-post"]) {
+        $id_post = $_POST["id-post"];
+        $sql = "UPDATE posts SET title_post='$post_title', content='$post_content'
+        WHERE id_post='$id_post'";
 
-    $sql = "INSERT INTO posts (id_post, date_post, title_post, content)
-    VALUE (NULL, NOW(), '$post_title', '$post_content')";
+    } else {
+        $sql = "INSERT INTO posts (id_post, date_post, title_post, content)
+        VALUE (NULL, NOW(), '$post_title', '$post_content')";
+    }
 
     if (mysqli_query($db_handle, $sql)) {
         header("Location: index.php");
@@ -17,11 +24,4 @@ if ($_POST["post-submit"]) {
     }
 
     mysqli_close($db_handle);
-}
-
-if ($_POST["post-edit-submit"]) {
-    $id_post = (int) $_POST["id-post"];
-    $post_title = mysqli_real_escape_string($db_handle, $_POST["post-title"]);
-    $post_content = mysqli_real_escape_string($db_handle, $_POST["post-content"]);
-
 }

@@ -15,7 +15,7 @@
         <a class="nav-link" href="/ynote/archive.php">Archive</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/ynote/newpost.php">New Post</a>
+        <a class="nav-link" href="/ynote/posting.php">New Post</a>
       </li>
     </ul>
     <form class="form-inline mt-2 mt-md-0">

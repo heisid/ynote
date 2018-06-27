@@ -20,6 +20,6 @@
     echo "<p><em>$date_post</em><p>";
     echo $content;
 
-    echo "<a href='edit.php?id-post=$id_post' class='btn btn-primary'>Edit</a>";
+    echo "<a href='posting.php?id-post=$id_post' class='btn btn-primary'>Edit</a>";
 
     include "tail.php";

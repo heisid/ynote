@@ -12,6 +12,7 @@
     $date_post = $res_sql_array['date_post'];
     $content = $res_sql_array['content'];
 
+    $style = "readpost.css";
     $page_title = $title_post;
     include "header.php";
     include "navbar.php";
@@ -20,6 +21,10 @@
     echo "<p><em>$date_post</em><p>";
     echo $content;
 
-    echo "<a href='posting.php?id-post=$id_post' class='btn btn-primary'>Edit</a>";
+    ?>
+<a href="posting.php?id-post=<?php echo $id_post; ?>" class="btn btn-primary">Edit</a>
+<form class="form-delete" action="process.php" method="post">
+    <button class="btn btn-danger" type="submit" name="delete-post" value="<?php echo $id_post; ?>">Delete</button>
+</form>
 
-    include "tail.php";
+<?php include "tail.php"; ?>

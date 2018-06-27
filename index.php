@@ -5,7 +5,7 @@
     include_once "config.php";
 
     $sql = "SELECT *
-            FROM post
+            FROM posts
             ORDER BY date_post DESC
             LIMIT 5";
     $result_sql = mysqli_query($db_handle, $sql);

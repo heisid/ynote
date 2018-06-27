@@ -4,7 +4,7 @@
         $id_post = (int) $_GET['id-post'];
     }
 
-    $sql = "SELECT * FROM post WHERE id_post = '$id_post'";
+    $sql = "SELECT * FROM posts WHERE id_post = '$id_post'";
     $result_sql = mysqli_query($db_handle, $sql);
     $res_sql_array = mysqli_fetch_array($result_sql);
 

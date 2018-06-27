@@ -5,7 +5,7 @@ if ($_POST["post-submit"]) {
     $post_title = mysqli_real_escape_string($db_handle, $_POST["post-title"]);
     $post_content = mysqli_real_escape_string($db_handle, $_POST["post-content"]);
 
-    $sql = "INSERT INTO post (id_post, date_post, title_post, content)
+    $sql = "INSERT INTO posts (id_post, date_post, title_post, content)
     VALUE (NULL, NOW(), '$post_title', '$post_content')";
 
     if (mysqli_query($db_handle, $sql)) {

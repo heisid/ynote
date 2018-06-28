@@ -24,10 +24,10 @@
 
     echo "<h1>$title_post</h1>";
     echo "<p><em>$date_post</em><p>";
-    echo "<hr>";
     if (isset($date_modified)) {
         echo "<p><em>(Last Modified $date_modified)</em></p>";
     }
+    echo "<hr>";
 
     echo $content;
     echo "<hr>";

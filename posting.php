@@ -62,7 +62,15 @@
         <input name="tags" class="form-control form-control-sm" id="tags" type="text">
     </div>
     <div class="form-group button-group">
-        <button type="submit" name="post-submit" value="1" class="btn btn-primary">Submit</button>
+        <button type="submit" name="post-submit" value="1" class="btn btn-primary">
+            <?php
+                if(isset($id_post)) {
+                    echo "Save";
+                } else {
+                    echo "Post";
+                }
+            ?>
+        </button>
     </div>
 </form>
 

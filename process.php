@@ -12,11 +12,11 @@ if (isset($_POST["post-submit"])) {
     
     if ($_POST["id-post"]) {
         $id_post = $_POST["id-post"];
-        $sql = "UPDATE posts SET title_post='$post_title', content='$post_content'
+        $sql = "UPDATE posts SET date_modified=NOW(), title_post='$post_title', content='$post_content'
         WHERE id_post='$id_post'";
     } else {
-        $sql = "INSERT INTO posts (id_post, date_post, title_post, content)
-        VALUE (NULL, NOW(), '$post_title', '$post_content')";
+        $sql = "INSERT INTO posts (id_post, date_post, date_modified, title_post, content)
+        VALUE (NULL, NOW(), NULL, '$post_title', '$post_content')";
     }
 
     if (mysqli_query($db_handle, $sql)) {

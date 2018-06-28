@@ -14,7 +14,7 @@
         $result_sql = mysqli_query($db_handle, $sql);
 
         if (mysqli_num_rows($result_sql) == 0) {
-            echo "<h3>No results found :(</h3>";
+            echo "<h3>No results found  &nbsp;   ᷅\_(ヅ)_/ ᷄</h3>";
         }
 
         while($row = mysqli_fetch_array($result_sql)) {

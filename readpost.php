@@ -32,9 +32,25 @@
     echo $content;
     echo "<hr>";
     ?>
+
+<!-- jQuery-confirm plugin stylesheet -->
+<link rel="assets/css/jquery-confirm.css">
+
 <a href="posting.php?id-post=<?php echo $id_post; ?>" class="btn btn-primary">Edit</a>
 <form class="form-delete" action="process.php" method="post">
-    <button class="btn btn-danger" type="submit" name="delete-post" value="<?php echo $id_post; ?>">Delete</button>
+    <button id="delete" class="btn btn-danger" type="submit" name="delete-post" value="<?php echo $id_post; ?>">Delete</button>
 </form>
+
+<!-- jQuery-confirm plugin -->
+<script src="assets/js/jquery-confirm.js"></script>
+<script>
+    $(document).ready(function () { 
+        $("#delete").click(function (event) {
+            if(!confirm('Are you sure want to delete this post?')) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
 
 <?php include "tail.php"; ?>

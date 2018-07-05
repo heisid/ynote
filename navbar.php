@@ -15,6 +15,9 @@
         <a class="nav-link" href="/ynote/archive.php">Archive</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="/ynote/tags.php">Tags</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/ynote/posting.php">New Post</a>
       </li>
     </ul>

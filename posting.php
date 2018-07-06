@@ -3,7 +3,13 @@
 
     if (isset($_GET['id-post'])) {
         $id_post = (int) $_GET['id-post'];
-        $sql = "SELECT * FROM posts WHERE id_post = '$id_post'";
+        $sql = "SELECT 
+                posts.title_post AS title_post, 
+                posts.content AS content,
+                tags.tag AS tag 
+                FROM posts INNER JOIN tags
+                ON posts.id_post = tags.id_post
+                WHERE posts.id_post = '$id_post'";
         $result_sql = mysqli_query($db_handle, $sql);
 
         $res_sql_array = mysqli_fetch_array($result_sql);

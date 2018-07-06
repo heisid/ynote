@@ -18,11 +18,14 @@ if (isset($_POST["post-submit"])) {
         WHERE id_post='$id_post';";
         $sql .= "DELETE FROM tags WHERE id_post='$id_post'";
         foreach ($tags_array as $tag) {
-            $sql .= "INSERT INTO tags (id_post, tag) VALUE ('$id_post', '$tag');";
+            $sql .= "INSERT INTO tags (id_post, tag) VALUES ('$id_post', '$tag');";
         }
     } else {
         $sql = "INSERT INTO posts (id_post, date_post, date_modified, title_post, content)
         VALUE (NULL, NOW(), NULL, '$post_title', '$post_content');";
+        foreach ($tags_array as $tag) {
+            $sql .= "INSERT INTO tags (id_post, tag) VALUES (LAST_INSERT_ID(), '$tag');";
+        }
     }
 
 

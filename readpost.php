@@ -35,7 +35,7 @@
     
     echo "<p>Tags: ";
     while ($tag = mysqli_fetch_array($result_sql_tags)) {
-        echo $tag["tag"].", ";
+        echo "<a href='tags.php?tag=".$tag['tag']."'>".$tag["tag"]."</a> ";
     }
     echo "</p>";
 

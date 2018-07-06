@@ -22,7 +22,7 @@ if (isset($_POST["post-submit"])) {
         }
     } else {
         $sql = "INSERT INTO posts (id_post, date_post, date_modified, title_post, content)
-        VALUE (NULL, NOW(), NULL, '$post_title', '$post_content')";
+        VALUE (NULL, NOW(), NULL, '$post_title', '$post_content');";
     }
 
 

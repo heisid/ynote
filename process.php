@@ -16,7 +16,7 @@ if (isset($_POST["post-submit"])) {
         $id_post = $_POST["id-post"];
         $sql = "UPDATE posts SET date_modified=NOW(), title_post='$post_title', content='$post_content'
         WHERE id_post='$id_post';";
-        $sql .= "DELETE FROM tags WHERE id_post='$id_post'";
+        $sql .= "DELETE FROM tags WHERE id_post='$id_post';";
         foreach ($tags_array as $tag) {
             $sql .= "INSERT INTO tags (id_post, tag) VALUES ('$id_post', '$tag');";
         }

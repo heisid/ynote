@@ -13,13 +13,13 @@
             content LIKE '%$search%'";
         $result_sql = mysqli_query($db_handle, $sql);
 
+        echo "<h3>Search result for posts contains <em>".$search."</em></h3>";
         if (mysqli_num_rows($result_sql) == 0) {
             echo "<h3>No results found  &nbsp;   ᷅\_(ヅ)_/ ᷄</h3>";
         }
 
         while($row = mysqli_fetch_array($result_sql)) {
             echo <<<EOD
-            <h3>Search result for posts contains "<em>{$search}</em>"</h3>
             <div class="row">
                 <div class="col-md-2">
                     <p><em>{$row['date_post']}</em><p>
